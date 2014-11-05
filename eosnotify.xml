@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension version="2.5" type="plugin" group="quickicon">
-	<name>End of Support Notifier</name>
+	<name>PLG_EOSNOTIFY</name>
 	<author>Joomla! Project</author>
 	<creationDate>October 2014</creationDate>
 	<copyright>Copyright (C) 2005 - 2014 Open Source Matters. All rights reserved.</copyright>
@@ -10,6 +10,7 @@
 	<version>2.5.0</version>
 	<description>End of Support Notifier</description>
 	<files>
+		<folder>language</folder>
 		<filename plugin="eosnotify">eosnotify.php</filename>
 		<filename>index.html</filename>
 		<filename>stop15.png</filename>
