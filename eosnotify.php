@@ -1,11 +1,11 @@
 <?php
 
 /**
- * @package		Joomla.Plugin
+ * @package	Joomla.Plugin
  * @subpackage  Quickicon.eosnotify
  *
  * @copyright	Copyright (C) 2005 - 2014 Open Source Matters, Inc. All rights reserved.
- * @license		GNU General Public License version 2 or later; see LICENSE.txt
+ * @license	GNU General Public License version 2 or later; see LICENSE.txt
  */
 
 defined('_JEXEC') or die;
@@ -40,7 +40,7 @@ class PlgQuickiconEosnotify extends JPlugin
 	 * @param  string  $context  The calling context
 	 *
 	 * @return  array  A list of icon definition associative arrays, consisting of the
-	 *				   keys link, image, text and access.
+	 *		   keys link, image, text and access.
 	 *
 	 * @since   2.5
 	 */
