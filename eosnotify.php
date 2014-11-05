@@ -16,6 +16,22 @@ defined('_JEXEC') or die;
  */
 class plgQuickiconEosnotify extends JPlugin
 {
+	/**
+	 * Constructor
+	 *
+	 * @param   object  &$subject  The object to observe
+	 * @param   array   $config    An optional associative array of configuration settings.
+	 *                             Recognized key values include 'name', 'group', 'params', 'language'
+	 *                             (this list is not meant to be comprehensive).
+	 *
+	 * @since   2.5
+	 */
+	public function __construct(&$subject, $config = array())
+	{
+		parent::__construct($subject, $config);
+
+		$this->loadLanguage();
+	}
 
 	/**
 	 * This method is called when the Quick Icons module is constructing its set
@@ -31,19 +47,19 @@ class plgQuickiconEosnotify extends JPlugin
 	 */
 	public function onGetIcons($context)
 	{
-		$text = 'Joomla 2.5 Support Is Ending!!';
+		$text = JText::_('PLG_EOSNOTIFY_SUPPORT_ENDING');
 		if(date('Ymd')>='20150101')
-			$text = 'Joomla 2.5 Support Has Ended!!';
+			$text = JText::_('PLG_EOSNOTIFY_SUPPORT_ENDED');
 			
 		if (JAdministratorHelper::findOption() == 'com_cpanel') { 
-			$messtext = '<div style="background-color:#FFCFCF; font-size:16px; font-weight:bold; margin-bottom: 10px; padding: 10px; border-radius: 10px;">' . $text . ' <a href="http://docs.joomla.org/Why_Migrate" target="_blank">Click Here</a> for More Information.</div>';
+			$messtext = '<div style="background-color:#FFCFCF; font-size:16px; font-weight:bold; margin-bottom: 10px; padding: 10px; border-radius: 10px;">' . $text . ' ' . JText::_('PLG_EOSNOTIFY_CLICK_FOR_INFORMATION_WITH_LINK') . '</div>';
 			echo("<script>document.getElementById('system-message-container').innerHTML = '" . $messtext . "';</script>");
 		}
 		
 		return array(array(
 			'link' => 'http://docs.joomla.org/Why_Migrate',
 			'image' => JURI::root() . 'plugins/quickicon/eosnotify/stop15.png',
-			'text' => '<span style="color:red;">' . $text . '<br />Click Here for More Information.</span>',
+			'text' => '<span style="color:red;">' . $text . '<br />' . JText::_('PLG_EOSNOTIFY_CLICK_FOR_INFORMATION') . '.</span>',
 			'id' => 'plg_quickicon_eos'
 		));
 	}
